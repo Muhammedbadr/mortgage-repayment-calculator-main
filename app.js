@@ -41,14 +41,15 @@ const translations = {
 clearBtn.addEventListener("click", clearAllThing);
 
 function clearAllThing() {
-  inputElements.forEach(element => element.value = '');
-  inputElements.forEach(element => {
-    element.classList.remove('border-rose-500', 'bg-rose-500', 'text-white');
-    element.nextElementSibling.innerHTML = ''; // Clear any existing error messages
-  });
+  inputElements.forEach(input => input.value = '');
+  monthlyRepaymentElement.textContent = '£';
+  let noyet = document.querySelector(".no-yet")
+  noyet.classList.remove("hidden");
+  let totlePage =  document.querySelector(".totlePage")
+  totlePage.classList.add("hidden");
 
-  btn.disabled = true; // Disable the calculate button
 }
+
 
 // Function to handle adding/removing error messages and styles
 function handleInputValidation(input, hasError) {
